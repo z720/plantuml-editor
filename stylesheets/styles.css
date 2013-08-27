@@ -95,6 +95,7 @@ img {
   max-width:100%;
 }
 
+
 header {
   width:270px;
   float:left;
@@ -179,8 +180,20 @@ hr {
 footer {
   width:270px;
   float:left;
+  clear:both;
   position:fixed;
   bottom:50px;
+}
+
+textarea {
+    width: 100%;
+    height: 15em;
+}
+textarea:after {
+    content: attr(data-encoded);
+}
+#targetlink {
+    width: 100%;
 }
 
 @media print, screen and (max-width: 960px) {
