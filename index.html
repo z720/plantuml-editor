@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Plantuml Editor by z720</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/ui.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
@@ -17,19 +17,14 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <h1>Plantuml Editor</h1>
-        <p>A static plantuml editor</p>
-        <ul>
-          <li><a href="https://github.com/z720/plantuml-editor/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/z720/plantuml-editor/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/z720/plantuml-editor">View On <strong>GitHub</strong></a></li>
-        </ul>
+      <header role="navigation">
+        <h1 class="brand"><a href="/">Plantuml Editor</a></h1>
+        <p class="baseline">A static <a href="http://plantuml.sourceforge.net">plantuml</a> editor</p>
       </header>
       <section>
-        <form action="" method="get">
-            <textarea id="source">
-start
+        <form action="" method="get" role="form" class="col-sm-6">
+            <p><label for="source">Diagram Source</label>
+            <textarea id="source">start
 repeat
     :Write UML 
     (plantuml syntax);
@@ -37,15 +32,18 @@ repeat
     :View Diagram;
 repeat while (diagram ok?)
 :Enjoy;
-stop
-            </textarea>
-            <p></p><button id="update">Update</button></p>
-            <p></p><img id="target" src="http://www.plantuml.com/plantuml/img/BOmn4a0m44Nxd69BhY25XeuIzSvaXn19PhE6t9x1wzwRFpy9iYYcI2WA7gg9hH0CVGUl5z6XbsDtaB8Nl4hzpOPeKEYNqT89ZSMPSTV_6voBTGI5-JA4hIvLrVerPAsIX7W3" /></p>
-            <p><input id="targetlink" type="text" value="http://www.plantuml.com/plantuml/img/BOmn4a0m44Nxd69BhY25XeuIzSvaXn19PhE6t9x1wzwRFpy9iYYcI2WA7gg9hH0CVGUl5z6XbsDtaB8Nl4hzpOPeKEYNqT89ZSMPSTV_6voBTGI5-JA4hIvLrVerPAsIX7W3"></p>
+stop</textarea>
+            </p>
+            <p><button type="button" id="update">Update</button></p>
+            <p>
+                <label for="targetlink">Image Link</label>
+                <input id="targetlink" type="text" value="http://www.plantuml.com/plantuml/img/BOmn4a0m44Nxd69BhY25XeuIzSvaXn19PhE6t9x1wzwRFpy9iYYcI2WA7gg9hH0CVGUl5z6XbsDtaB8Nl4hzpOPeKEYNqT89ZSMPSTV_6voBTGI5-JA4hIvLrVerPAsIX7W3">
+            </p>
         </form>
+            <p class="col-sm-6 preview"><img id="target" src="http://www.plantuml.com/plantuml/img/BOmn4a0m44Nxd69BhY25XeuIzSvaXn19PhE6t9x1wzwRFpy9iYYcI2WA7gg9hH0CVGUl5z6XbsDtaB8Nl4hzpOPeKEYNqT89ZSMPSTV_6voBTGI5-JA4hIvLrVerPAsIX7W3" /></p>
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/z720">z720</a></p>
+        <p><small>This project is maintained by <a href="https://github.com/z720">z720</a>  &mdash; <a rel="external" href="https://github.com/z720/plantuml-editor">View On <strong>GitHub</strong></a></small></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>

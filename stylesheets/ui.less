@@ -1,0 +1,47 @@
+@import "custom-bootstrap.less";
+
+header {
+  .navbar;
+  .navbar-default;
+  .brand {
+      .navbar-header;
+      font-size: 1em;
+      margin: 1em 0.25em;
+  }
+  .baseline {
+      .navbar-text;
+      .pull-right;
+      margin: 1em 0.25em;
+  }
+  a {
+      text-decoration: none;
+  }
+}
+
+section {
+   .make-row();
+}   
+footer {
+    .clearfix();
+}
+form{
+    .col-sm-6;
+    p {
+        .form-group;
+        input, textarea {
+            .form-control;
+        }
+    }
+    #source {
+        height: 20em;
+    }
+    #update {
+        .btn;
+        .btn-default;
+        .glyphicon;
+        .glyphicon-refresh;
+    }
+}
+.preview {
+    .col-sm-6;
+}
