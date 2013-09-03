@@ -1,16 +1,16 @@
 (function($){
     var encode64 = function(data) {
-    	r = "";
-		for (i=0; i<data.length; i+=3) {
-			if (i+2==data.length) {
-				r +=append3bytes(data.charCodeAt(i), data.charCodeAt(i+1), 0);
-			} else if (i+1==data.length) {
-				r += append3bytes(data.charCodeAt(i), 0, 0);
-			} else {
-				r += append3bytes(data.charCodeAt(i), data.charCodeAt(i+1), data.charCodeAt(i+2));
-			}
-		}
-		return r;
+        var r = "";
+        for (i=0; i<data.length; i+=3) {
+        	if (i+2==data.length) {
+        		r +=append3bytes(data.charCodeAt(i), data.charCodeAt(i+1), 0);
+        	} else if (i+1==data.length) {
+        		r += append3bytes(data.charCodeAt(i), 0, 0);
+        	} else {
+                r += append3bytes(data.charCodeAt(i), data.charCodeAt(i+1), data.charCodeAt(i+2));
+        	}
+        }
+        return r;
 	};
 
 	var append3bytes = function(b1, b2, b3) {
@@ -27,41 +27,23 @@
 	};
 
 	var encode6bit = function(b) {
-		if (b < 10) {
-			return String.fromCharCode(48 + b);
-		}
+		if (b < 10) { return String.fromCharCode(48 + b); }
 		b -= 10;
-		if (b < 26) {
-			return String.fromCharCode(65 + b);
-		}
+		if (b < 26) { return String.fromCharCode(65 + b); }
+		b -= 26; 
+		if (b < 26) { return String.fromCharCode(97 + b); }
 		b -= 26;
-		if (b < 26) {
-			return String.fromCharCode(97 + b);
-		}
-		b -= 26;
-		if (b == 0) {
-			return '-';
-		}
-		if (b == 1) {
-			return '_';
-		}
+		if (b == 0) { return '-'; }
+		if (b == 1) { return '_'; }
 		return '?';
 	};
 
-	var getURL = function(s) {
-	  //UTF8
-	  s = unescape(encodeURIComponent(s));
-	  return "http://www.plantuml.com/plantuml/img/"+encode64(deflate(s, 9));
-	};
-    
-    $('#source').on('change blur keypress', function() {
+    $('#source').on('change focusout keyup paste cut', function() {
         $('#update').trigger('source-changed');
         console.log('source-change triggered');
         $(this).prop('data-encoded',encode64(deflate(unescape(encodeURIComponent($(this).val())), 9)));
-        // function() {
-            console.log('source-encoded triggered');
-            $('#target').trigger('source-encoded');
-        //});
+        $('#target').trigger('source-encoded');
+        console.log('source-encoded triggered');
     });
     $('#update').on('click', function(e) {
         try {
@@ -87,6 +69,7 @@
             $('#targetlink').val("http://www.plantuml.com/plantuml/img/"+$('#source').prop('data-encoded'));
     }));
     
+    /*
     $(document).on('ready', function() {
         var encoded = window.location.search;
         if(encoded) {
@@ -94,6 +77,7 @@
         } else {
             console.log('Default value');
         }
-    })
+    });
+    */
     
 })(jQuery);
