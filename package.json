@@ -1,0 +1,16 @@
+{
+  "name": "plantuml-editor",
+  "description": "An editor for PlantUML",
+  "scripts": {
+    "start": "node server.js",
+    "prestart": "node_modules/.bin/lessc stylesheets/ui.less --relative-urls --include-path=bootstrap/less > stylesheets/ui.css" 
+  },
+  "version": "0.0.1",
+  "devDependencies": {
+    "dalekjs": "0.0.1",
+    "less": "~1.4.2"
+  },
+  "dependencies": {
+    "express": "~3.3.8"
+  }
+}
