@@ -689,7 +689,9 @@ address {
 .col-lg-9,
 .col-lg-10,
 .col-lg-11,
-.col-lg-12 {
+.col-lg-12,
+form,
+.preview {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -758,7 +760,9 @@ address {
   .col-sm-8,
   .col-sm-9,
   .col-sm-10,
-  .col-sm-11 {
+  .col-sm-11,
+  form,
+  .preview {
     float: left;
   }
   .col-sm-1 {
@@ -767,7 +771,8 @@ address {
   .col-sm-2 {
     width: 16.666666666666664%;
   }
-  .col-sm-3 {
+  .col-sm-3,
+  form {
     width: 25%;
   }
   .col-sm-4 {
@@ -785,7 +790,8 @@ address {
   .col-sm-8 {
     width: 66.66666666666666%;
   }
-  .col-sm-9 {
+  .col-sm-9,
+  .preview {
     width: 75%;
   }
   .col-sm-10 {
@@ -3791,12 +3797,6 @@ section:after {
 section:after {
   clear: both;
 }
-form {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
 form p {
   margin-bottom: 15px;
 }
@@ -3952,9 +3952,6 @@ form #update:empty {
 form #update:before {
   content: "\e031";
 }
-.preview {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+#target {
+  max-width: 100%;
 }
