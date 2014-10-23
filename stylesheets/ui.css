@@ -771,11 +771,11 @@ form,
   .col-sm-2 {
     width: 16.666666666666664%;
   }
-  .col-sm-3,
-  form {
+  .col-sm-3 {
     width: 25%;
   }
-  .col-sm-4 {
+  .col-sm-4,
+  form {
     width: 33.33333333333333%;
   }
   .col-sm-5 {
@@ -787,11 +787,11 @@ form,
   .col-sm-7 {
     width: 58.333333333333336%;
   }
-  .col-sm-8 {
+  .col-sm-8,
+  .preview {
     width: 66.66666666666666%;
   }
-  .col-sm-9,
-  .preview {
+  .col-sm-9 {
     width: 75%;
   }
   .col-sm-10 {
