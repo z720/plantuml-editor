@@ -33,13 +33,24 @@ form{
         }
     }
     #source {
-        height: 20em;
+        min-height: 20em;
+        height: ~"calc(100vh - 17em)";
     }
-    #update {
+    .update {
         .btn;
         .btn-default;
+        span {
         .glyphicon;
         .glyphicon-refresh;
+        }
+    }
+    .dl {
+        .btn;
+        .btn-default;
+        span {
+        .glyphicon;
+        .glyphicon-download;
+        }
     }
 }
 .preview {

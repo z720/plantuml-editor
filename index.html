@@ -10,7 +10,7 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="javascripts/deflate.js"></script>
     <script src="javascripts/debounce.js"></script>
   </head>
@@ -18,10 +18,11 @@
     <div class="wrapper">
       <header role="navigation">
         <h1 class="brand"><a href="/">PlantUML Editor</a></h1>
-        <p class="baseline">A <a href="http://plantuml.sourceforge.net">PlantUML</a> editor &mdash; <small>by <a href="https://github.com/z720">z720</a>  &mdash; Hosted on <a rel="external" href="https://github.com/z720/plantuml-editor">GitHub</a></small></p>
+        <p class="baseline">A <a href="//plantuml.sourceforge.net">PlantUML</a> editor &mdash; <small>by <a href="//github.com/z720">z720</a>  &mdash; Hosted on <a rel="external" href="//github.com/z720/plantuml-editor">GitHub</a></small></p>
       </header>
       <section>
         <form action="" method="get" role="form">
+            <p><label for="diagram_name">Name</label><input type="text" id="diagram_name" value="Diagram"/></p>
             <p><label for="source">Diagram Source</label>
             <textarea id="source">start
 repeat
@@ -33,13 +34,15 @@ repeat while (diagram ok?)
 :Enjoy;
 stop</textarea>
             </p>
-            <p><button type="button" id="update">Update</button></p>
             <p>
-                <label for="targetlink">Image Link</label>
-                <input id="targetlink" type="text" value="http://www.plantuml.com/plantuml/img/BOmn4a0m44Nxd69BhY25XeuIzSvaXn19PhE6t9x1wzwRFpy9iYYcI2WA7gg9hH0CVGUl5z6XbsDtaB8Nl4hzpOPeKEYNqT89ZSMPSTV_6voBTGI5-JA4hIvLrVerPAsIX7W3">
+              <button type="button" id="update" class="update"><span></span> Update</button> 
+              <a href="" id="dl_src" class="dl"><span></span>  Download Source</a> 
+              <a href="" id="dl_img" class="dl"><span></span>  Download Image</a>
             </p>
         </form>
-            <p class="preview"><img id="target" src="http://www.plantuml.com/plantuml/img/BOmn4a0m44Nxd69BhY25XeuIzSvaXn19PhE6t9x1wzwRFpy9iYYcI2WA7gg9hH0CVGUl5z6XbsDtaB8Nl4hzpOPeKEYNqT89ZSMPSTV_6voBTGI5-JA4hIvLrVerPAsIX7W3" /></p>
+            <p class="preview">
+              <img id="target" src="//www.plantuml.com/plantuml/img/BOmn4a0m44Nxd69BhY25XeuIzSvaXn19PhE6t9x1wzwRFpy9iYYcI2WA7gg9hH0CVGUl5z6XbsDtaB8Nl4hzpOPeKEYNqT89ZSMPSTV_6voBTGI5-JA4hIvLrVerPAsIX7W3" />
+            </p>
       </section>
     </div>
     <script src="javascripts/scale.fix.js"></script>

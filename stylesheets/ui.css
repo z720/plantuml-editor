@@ -3856,12 +3856,15 @@ textareaform p textarea {
   height: auto;
 }
 form #source {
-  height: 20em;
+  min-height: 20em;
+  height: calc(100vh - 17em);
 }
-form #update {
+form .update {
+  display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
+  font-weight: normal;
   line-height: 1.428571429;
   text-align: center;
   vertical-align: middle;
@@ -3878,6 +3881,67 @@ form #update {
   color: #333333;
   background-color: #ffffff;
   border-color: #cccccc;
+}
+form .update:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+form .update:hover,
+form .update:focus {
+  color: #333333;
+  text-decoration: none;
+}
+form .update:active,
+form .update.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+form .update.disabled,
+form .update[disabled],
+fieldset[disabled] form .update {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+form .update:hover,
+form .update:focus,
+form .update:active,
+form .update.active,
+.open .dropdown-toggleform .update {
+  color: #333333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+form .update:active,
+form .update.active,
+.open .dropdown-toggleform .update {
+  background-image: none;
+}
+form .update.disabled,
+form .update[disabled],
+fieldset[disabled] form .update,
+form .update.disabled:hover,
+form .update[disabled]:hover,
+fieldset[disabled] form .update:hover,
+form .update.disabled:focus,
+form .update[disabled]:focus,
+fieldset[disabled] form .update:focus,
+form .update.disabled:active,
+form .update[disabled]:active,
+fieldset[disabled] form .update:active,
+form .update.disabled.active,
+form .update[disabled].active,
+fieldset[disabled] form .update.active {
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+form .update span {
   position: relative;
   top: 1px;
   display: inline-block;
@@ -3887,26 +3951,55 @@ form #update {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
 }
-form #update:focus {
+form .update span:empty {
+  width: 1em;
+}
+form .update span:before {
+  content: "\e031";
+}
+form .dl {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+form .dl:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-form #update:hover,
-form #update:focus {
+form .dl:hover,
+form .dl:focus {
   color: #333333;
   text-decoration: none;
 }
-form #update:active,
-form #update.active {
+form .dl:active,
+form .dl.active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-form #update.disabled,
-form #update[disabled],
-fieldset[disabled] form #update {
+form .dl.disabled,
+form .dl[disabled],
+fieldset[disabled] form .dl {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -3914,43 +4007,53 @@ fieldset[disabled] form #update {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-form #update:hover,
-form #update:focus,
-form #update:active,
-form #update.active,
-.open .dropdown-toggleform #update {
+form .dl:hover,
+form .dl:focus,
+form .dl:active,
+form .dl.active,
+.open .dropdown-toggleform .dl {
   color: #333333;
   background-color: #ebebeb;
   border-color: #adadad;
 }
-form #update:active,
-form #update.active,
-.open .dropdown-toggleform #update {
+form .dl:active,
+form .dl.active,
+.open .dropdown-toggleform .dl {
   background-image: none;
 }
-form #update.disabled,
-form #update[disabled],
-fieldset[disabled] form #update,
-form #update.disabled:hover,
-form #update[disabled]:hover,
-fieldset[disabled] form #update:hover,
-form #update.disabled:focus,
-form #update[disabled]:focus,
-fieldset[disabled] form #update:focus,
-form #update.disabled:active,
-form #update[disabled]:active,
-fieldset[disabled] form #update:active,
-form #update.disabled.active,
-form #update[disabled].active,
-fieldset[disabled] form #update.active {
+form .dl.disabled,
+form .dl[disabled],
+fieldset[disabled] form .dl,
+form .dl.disabled:hover,
+form .dl[disabled]:hover,
+fieldset[disabled] form .dl:hover,
+form .dl.disabled:focus,
+form .dl[disabled]:focus,
+fieldset[disabled] form .dl:focus,
+form .dl.disabled:active,
+form .dl[disabled]:active,
+fieldset[disabled] form .dl:active,
+form .dl.disabled.active,
+form .dl[disabled].active,
+fieldset[disabled] form .dl.active {
   background-color: #ffffff;
   border-color: #cccccc;
 }
-form #update:empty {
+form .dl span {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+form .dl span:empty {
   width: 1em;
 }
-form #update:before {
-  content: "\e031";
+form .dl span:before {
+  content: "\e026";
 }
 #target {
   max-width: 100%;
