@@ -1,6 +1,6 @@
 import adapter from '@sveltejs/adapter-static';
 
-const dev = process.env.NODE_ENV === 'development';
+const ghpages = process.env.TARGET === 'github-pages';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -13,7 +13,7 @@ const config = {
 			precompress: false
 		}),
 		paths: {
-			base: dev ? '' : '/plantuml-editor',
+			base: ghpages ? '/plantuml-editor' : '',
 		},
 		trailingSlash: 'always',
 		prerender: {
