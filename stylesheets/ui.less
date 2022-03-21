@@ -1,0 +1,61 @@
+@import "custom-bootstrap.less";
+
+header {
+  .navbar;
+  .navbar-default;
+  .navbar-static-top;
+  .brand {
+      .navbar-header;
+      font-size: 1em;
+      margin: 1em 0.25em;
+  }
+  .baseline {
+      .navbar-text;
+      .pull-right;
+      margin: 1em 0.25em;
+  }
+  a {
+      text-decoration: none;
+  }
+}
+
+section {
+   .make-row();
+   margin: 0 10px;
+}   
+
+form{
+    &:extend(.col-sm-4);
+    p {
+        .form-group;
+        input, textarea {
+            .form-control;
+        }
+    }
+    #source {
+        min-height: 20em;
+        height: ~"calc(100vh - 17em)";
+    }
+    .update {
+        .btn;
+        .btn-default;
+        span {
+        .glyphicon;
+        .glyphicon-refresh;
+        }
+    }
+    .dl {
+        .btn;
+        .btn-default;
+        span {
+        .glyphicon;
+        .glyphicon-download;
+        }
+    }
+}
+.preview {
+    &:extend(.col-sm-8);
+}
+#target {
+    max-width: 100%;
+}
