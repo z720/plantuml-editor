@@ -10,7 +10,7 @@
     "test": "playwright test",
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
-    "deploy-gh": "TARGET=github-pages npm run build && npx gh-pages -d build"
+    "deploy-gh": "TARGET=github-pages npm run build && npx gh-pages -d build -t"
   },
   "devDependencies": {
     "@playwright/test": "^1.20.0",
