@@ -1,27 +1,13 @@
 <script>
-  import Base64 from "../lib/base64";
-  // import { faFileCode, faFileImage } from '@fortawesome/free-solid-svg-icons';
-  // import { FontAwesomeIcon } from "fontawesome-svelte";
-  import Download from "./icons/download.svelte";
-  import Code from "./icons/code.svelte";
-  export let diagram;
+  export let name, content
 </script>
 
 <div class="editor">
-<p class="ctrl">
-  <input id="diagram.name" bind:value={diagram.name} placeholder="Name your Diagram"/>
-  <a class="dl" 
-      href="data:text/plain;base64,{Base64.encode(diagram.content)}" 
-      download="{diagram.name || 'diagram'}.puml"  >
-    <Code />
-  </a>
-  <a class="dl" 
-      href="{diagram.imageUrl()}" 
-      download="{diagram.name || 'diagram'}.png" target="plantuml-editor-dl" >
-    <Download />
-  </a>
-</p>
-<p><textarea bind:value={diagram.content}></textarea></p>
+  <p class="ctrl">
+    <input id="diagram.name" bind:value={name} placeholder="Name your Diagram"/>
+    <slot></slot>
+  </p>
+  <p><textarea bind:value={content}></textarea></p>
 </div>
 
 
@@ -33,6 +19,7 @@
   .editor {
     width: 100%;
     min-width: 300px;
+    max-width: 70vw;
   }
   .editor p input {
     border: none;
@@ -50,6 +37,8 @@
     border: 1px solid lightgrey;
     min-height: 20em;
     height: calc(100vh - 8em);
+    font-family:  Consolas, "Courier New", monospace;
+    font-size: 10pt;
   }
   .ctrl {
     display: flex;
@@ -58,10 +47,6 @@
   }
   .ctrl :first-child {
     width: 100%;
-  }
-  .dl {
-    color: inherit;
-    margin-left: 0.2em;
   }
   p {
     margin: 0.2em 0;
