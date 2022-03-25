@@ -2,13 +2,13 @@
 import Editor from '../components/Editor.svelte';
 import Preview from '../components/Preview.svelte';
 import Download from '../components/Download.svelte';
-import { plantumlServer } from '../stores/parameters';
+
 import { current } from '../stores/diagram';
 const { dataUrlSource, imageUrl } = current;
 </script>
 
 <nav>
-	<h1>PlantUML Editor <input bind:value={$plantumlServer}></h1>
+	<h1>PlantUML Editor</h1>
 	<aside>
 		<small>by <a href="//github.com/z720">z720</a>
 			— Hosted on <a rel="external" href="//github.com/z720/plantuml-editor">GitHub</a>
@@ -28,6 +28,7 @@ const { dataUrlSource, imageUrl } = current;
 <style>
 	main {
 		display: flex;
+		flex: 1 auto;
 		padding: 0.2em 1ex;
 	}
 	nav {

@@ -28,7 +28,7 @@ function createStore(key, init) {
         return encode($d.content);
     }),
     imageUrl: derived([storedDiagram, plantumlServer], ([$d, $server]) => {
-        return `//${$server}/img/${encode($d.content)}`;
+        return `${$server}/img/${encode($d.content)}`;
     }),
     dataUrlSource: derived(storedDiagram, $d => {
       return `data:text/plain;base64,${Base64.encode($d.content)}`;
