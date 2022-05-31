@@ -2,6 +2,7 @@
 import Editor from '../components/Editor.svelte';
 import Preview from '../components/Preview.svelte';
 import Download from '../components/Download.svelte';
+import Upload from '../components/Upload.svelte';
 
 import { current } from '../stores/diagram';
 const { dataUrlSource, imageUrl } = current;
@@ -22,7 +23,9 @@ const { dataUrlSource, imageUrl } = current;
 			<Download icon="Download" href="{$imageUrl}" 
 				name="{$current.name || 'diagram'}.png" />
 	</Editor>
-	<Preview name={$current.name || 'diagram'} url={$imageUrl} />
+	<Preview name={$current.name || 'diagram'} url={$imageUrl}>
+		<Upload bind:content={$current.content} />
+	</Preview>
 </main>
 
 <style>

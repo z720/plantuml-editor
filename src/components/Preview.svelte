@@ -18,6 +18,7 @@ function toggle() {
 
 <div class="preview {aspect}">
   <p class="actions">
+    <slot />
     <button on:click={toggle}>
       <Sliders />
     </button>
