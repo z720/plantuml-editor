@@ -18,9 +18,9 @@ function toggle() {
 
 <div class="preview {aspect}">
   <p class="actions">
-    <button on:click={toggle}>
+    <!-- <button on:click={toggle}>
       <Sliders />
-    </button>
+    </button> -->
     {#if aspect == 'zoom'}
     <button on:click={fit}><Minimize /></button>
     {:else}

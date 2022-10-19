@@ -4,7 +4,8 @@
 
 <div class="editor">
   <p class="ctrl">
-    <input id="diagram.name" bind:value={name} placeholder="Name your Diagram"/>
+    <label for="diagram-name">Name:</label>
+    <input id="diagram-name" bind:value={name} placeholder="Name your Diagram"/>
     <slot></slot>
   </p>
   <p><textarea bind:value={content}></textarea></p>
@@ -12,8 +13,8 @@
 
 
 <style>
-  input:focus,
-  textarea:focus {
+  input:focus-visible,
+  textarea:focus-visible {
     outline: none;
   }
   .editor {
@@ -27,7 +28,7 @@
     width: 99%;
     font-size: 1.1em;
   }
-  .editor p input:focus {
+  .editor p input:focus-visible {
     border-bottom: 1px solid lightgrey;
   }
   .editor textarea {
@@ -43,10 +44,16 @@
   .ctrl {
     display: flex;
     align-items: baseline;
-    justify-content: space-between;
+    justify-content:stretch
   }
-  .ctrl :first-child {
-    width: 100%;
+  .ctrl > * {
+    flex-basis: min-content;
+  }
+  .ctrl label:first-child {
+    margin-right: 1ex;
+  }
+  .ctrl #diagram-name {
+    flex: 1;
   }
   p {
     margin: 0.2em 0;
