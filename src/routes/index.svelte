@@ -10,7 +10,9 @@ const { dataUrlSource, imageUrl } = current;
 <nav>
 	<h1>PlantUML Editor</h1>
 	<aside>
-		<small>by <a href="//github.com/z720">z720</a>
+		<small>
+			<a href="//plantuml.com">PlantUML</a>
+			by <a href="//github.com/z720">z720</a>
 			— Hosted on <a rel="external" href="//github.com/z720/plantuml-editor">GitHub</a>
 			— Icons by <a href="https://feathericons.com">Feather</a></small>
 	</aside>
