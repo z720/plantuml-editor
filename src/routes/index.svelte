@@ -42,9 +42,8 @@ const { dataUrlSource, imageUrl } = current;
 		background-color: rgb(238, 238, 238);
 	}
 	nav h1 {
-		width: 100%;
 		font-size: 1.2em;
-		margin: 0.2em 0;
+		margin: 0.4em 0;
 	}
 	nav aside {
 		min-width: 20em;
