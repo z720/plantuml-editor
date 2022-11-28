@@ -1,3 +1,8 @@
-.c9revisions/
-node_modules/
-.c9
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
