@@ -4,7 +4,7 @@ import { plantumlServer } from '../stores/parameters';
 
 export let url, name;
 let options = false;
-let aspect = 'fit'
+let aspect = 'fit';
 function fit() {
   aspect = 'fit';
 }
@@ -14,13 +14,19 @@ function zoom() {
 function toggle() {
   options = !options;
 }
+function serverpref() {
+	let s = window.prompt('Choose Plantuml server', $plantumlServer );
+	if(s) {
+		$plantumlServer = s;
+	}
+}
 </script>
 
-<div class="preview {aspect}">
+<div class="preview {aspect} { options ? 'options': ''}">
   <p class="actions">
-    <!-- <button on:click={toggle}>
+    <button on:click={toggle}>
       <Sliders />
-    </button> -->
+    </button>
     {#if aspect == 'zoom'}
     <button on:click={fit}><Minimize /></button>
     {:else}
@@ -53,6 +59,9 @@ function toggle() {
     height: calc(100vh - 8em);
     width: 100%;
   }
+  .preview.options {
+    width: 90%
+  }
   .fit img {
     width: 100%;
     height: 100%;
@@ -68,13 +77,15 @@ function toggle() {
   .option {
     display: flex;
     width: 100%;
+    align-items: center;
   }
   label {
-    width: 40%;
+    width: 30%;
     text-align: right;
     margin-right:1ex;
   }
   label + * {
     width: 100%;
+    font-size: 110%;
   }
 </style>
