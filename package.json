@@ -24,7 +24,7 @@
     "prettier": "^2.8.8",
     "prettier-plugin-svelte": "^2.5.0",
     "svelte": "^3.59.1",
-    "svelte-local-storage-store": "^0.2.6"
+    "svelte-local-storage-store": "^0.4.0"
   },
   "dependencies": {},
   "type": "module"
