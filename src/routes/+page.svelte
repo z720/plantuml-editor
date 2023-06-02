@@ -5,10 +5,23 @@ import Download from '../components/Download.svelte';
 
 import { current } from '../stores/diagram';
 const { dataUrlSource, imageUrl } = current;
+
+let version = "undefined";
+if(window.fetch) {
+	fetch('/version.json').then(response => {
+		if(response.ok) {
+			response.json().then(data => {
+				version = data.version
+			})
+		}
+	});
+}
+
 </script>
 
 <nav>
-	<h1>PlantUML Editor</h1>
+	<h1 title="{version}">PlantUML Editor<sub>
+	</sub></h1>
 	<aside>
 		<small>
 			<a href="//plantuml.com">PlantUML</a>
