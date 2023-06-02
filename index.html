@@ -6,27 +6,33 @@
 		<link rel="icon" href="/plantuml-editor/favicon.png" />
 		<link rel="stylesheet" href="/plantuml-editor/base.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="content-security-policy" content="">
-	<link rel="modulepreload" href="/plantuml-editor/_app/immutable/start-dadcf9f6.js">
-	<link rel="modulepreload" href="/plantuml-editor/_app/immutable/chunks/index-3d0c4b8b.js">
-	<link rel="modulepreload" href="/plantuml-editor/_app/immutable/chunks/index-bbda3c62.js">
+		
+		<link rel="modulepreload" href="/plantuml-editor/_app/immutable/entry/start.75759594.js">
+		<link rel="modulepreload" href="/plantuml-editor/_app/immutable/chunks/index.efe21565.js">
+		<link rel="modulepreload" href="/plantuml-editor/_app/immutable/chunks/singletons.ebc917b9.js">
+		<link rel="modulepreload" href="/plantuml-editor/_app/immutable/chunks/index.188fae49.js">
+		<link rel="modulepreload" href="/plantuml-editor/_app/immutable/entry/app.5f1b830b.js">
 	</head>
 	<body>
 		<div>
-		<script type="module" data-sveltekit-hydrate="45h">
-		import { set_public_env, start } from "/plantuml-editor/_app/immutable/start-dadcf9f6.js";
+			<script>
+				{
+					__sveltekit_cc4ei9 = {
+						assets: "/plantuml-editor",
+						base: "/plantuml-editor",
+						env: {}
+					};
 
-		set_public_env({});
+					const element = document.currentScript.parentElement;
 
-		start({
-			target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
-			paths: {"base":"/plantuml-editor","assets":"/plantuml-editor"},
-			session: {},
-			route: true,
-			spa: true,
-			trailing_slash: "always",
-			hydrate: null
-		});
-	</script></div>
+					Promise.all([
+						import("/plantuml-editor/_app/immutable/entry/start.75759594.js"),
+						import("/plantuml-editor/_app/immutable/entry/app.5f1b830b.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		</div>
 	</body>
 </html>
