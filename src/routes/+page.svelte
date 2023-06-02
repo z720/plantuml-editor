@@ -8,7 +8,7 @@ const { dataUrlSource, imageUrl } = current;
 
 let version = "undefined";
 if(window.fetch) {
-	fetch('/version.json').then(response => {
+	fetch('version.json').then(response => {
 		if(response.ok) {
 			response.json().then(data => {
 				version = data.version
