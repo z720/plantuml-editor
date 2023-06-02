@@ -2,13 +2,14 @@
 import Editor from '../components/Editor.svelte';
 import Preview from '../components/Preview.svelte';
 import Download from '../components/Download.svelte';
+import { base } from '$app/paths';
 
 import { current } from '../stores/diagram';
 const { dataUrlSource, imageUrl } = current;
 
 let version = "undefined";
 if(window.fetch) {
-	fetch('version.json').then(response => {
+	fetch(base + '/version.json').then(response => {
 		if(response.ok) {
 			response.json().then(data => {
 				version = data.version
