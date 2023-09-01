@@ -18,7 +18,7 @@
     "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "^1.22.4",
     "svelte": "^3.59.2",
-    "svelte-local-storage-store": "^0.5.0",
+    "svelte-local-storage-store": "^0.6.0",
     "plantuml-encoder": "1.4.0",
 
     "@playwright/test": "latest",
