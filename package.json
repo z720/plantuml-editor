@@ -16,8 +16,8 @@
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/adapter-static": "next",
-    "@sveltejs/kit": "^1.27.2",
-    "svelte": "^3.59.2",
+    "@sveltejs/kit": "^2.5.0",
+    "svelte": "^4.2.19",
     "svelte-local-storage-store": "^0.6.4",
     "plantuml-encoder": "1.4.0",
 
