@@ -1,6 +1,6 @@
 {
   "name": "plantuml-editor",
-  "version": "1.0.2-dev",
+  "version": "1.0.2",
   "scripts": {
     "dev": "vite dev",
     "prebuild": "VERSION=`git describe --tags`; echo \"{ \\\"version\\\": \\\"$VERSION\\\"}\" > static/version.json",
@@ -20,12 +20,11 @@
     "svelte": "^4.2.19",
     "svelte-local-storage-store": "^0.6.4",
     "plantuml-encoder": "1.4.0",
-
+    "cookie": "^0.7.0",
     "@playwright/test": "latest",
-
     "eslint": "latest",
     "eslint-config-prettier": "latest",
-    "eslint-plugin-svelte3": "latest",
+    "eslint-plugin-svelte": "latest",
     "prettier": "latest",
     "prettier-plugin-svelte": "latest"
   },
