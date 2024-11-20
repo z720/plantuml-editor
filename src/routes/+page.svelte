@@ -7,22 +7,25 @@ import { base } from '$app/paths';
 import { current } from '../stores/diagram';
 const { dataUrlSource, imageUrl } = current;
 
-let version = "undefined";
+let version = __APP_VERSION__;
 if(window.fetch) {
 	fetch(base + '/version.json').then(response => {
 		if(response.ok) {
 			response.json().then(data => {
 				version = data.version
 			})
+		} else {
+			version = __APP_VERSION__ + "-snapshot";
 		}
 	});
 }
 
 </script>
-
+<svelte:head>
+	<title>PlantUML Editor - {version}</title>
+</svelte:head>
 <nav>
-	<h1 title="{version}">PlantUML Editor<sub>
-	</sub></h1>
+	<h1 title="{version}">PlantUML Editor <small>{version}</small></h1>
 	<aside>
 		<small>
 			<a href="//plantuml.com">PlantUML</a>
