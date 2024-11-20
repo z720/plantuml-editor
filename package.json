@@ -1,6 +1,6 @@
 {
   "name": "plantuml-editor",
-  "version": "1.0.2",
+  "version": "1.0.3-dev",
   "scripts": {
     "dev": "vite dev",
     "prebuild": "VERSION=`git describe --tags`; echo \"{ \\\"version\\\": \\\"$VERSION\\\"}\" > static/version.json",
