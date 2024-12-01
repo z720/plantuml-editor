@@ -20,7 +20,7 @@
     "svelte": "^4.2.19",
     "svelte-local-storage-store": "^0.6.4",
     "plantuml-encoder": "1.4.0",
-    "cookie": "^0.7.0",
+    "cookie": "^1.0.2",
     "@playwright/test": "latest",
     "eslint": "latest",
     "eslint-config-prettier": "latest",
